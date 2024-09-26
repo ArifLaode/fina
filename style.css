@@ -14,6 +14,19 @@ p {
     font-weight: 400; /* Normal */
 }
 
+.navbar-banner-transparent {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-light .nav-link {
+    color: black !important;
+}
+
+.navbar-light .navbar-brand {
+    color: black !important;
+}
+
 .banner {
     position: relative;
     background: url("banners.jpg") no-repeat center center;
@@ -43,4 +56,44 @@ p {
     font-size: large;
     text-align: justify;
     margin-bottom: 10pt;
+}
+
+.detail {
+    margin: 15px 0; /* Jarak antar detail */
+    padding: 20px; /* Padding di dalam detail */
+    transition: transform 0.9s ease, box-shadow 0.9s ease; /* Transisi untuk animasi */
+    opacity: 0; /* Mulai dengan transparansi 0 untuk efek animasi */
+    transform: translateY(20px); /* Memindahkan sedikit ke bawah untuk efek animasi */
+}
+
+.detail.loaded {
+    opacity: 1; /* Menampilkan detail */
+    transform: translateY(0); /* Mengembalikan posisi ke normal */
+}
+
+footer {
+    background: url('Gambar/mata-air.jpg') no-repeat center center/cover;
+    color: white;
+    opacity: 1.0;
+    position: relative;
+    height: 5cm;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Warna overlay hitam dengan transparansi 80% */
+    z-index: 1;
+}
+
+/* Styling konten footer agar berada di atas overlay */
+.footer-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px; /* Tambahkan padding agar teks tidak menempel dengan tepi footer */
+    color: rgb(255, 252, 252); /* Warna teks bisa disesuaikan */
 }
